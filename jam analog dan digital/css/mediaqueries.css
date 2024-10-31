@@ -1,0 +1,69 @@
+/* ======================= */
+/* ===> media queries <=== */
+/* ======================= */
+
+/* Laptop */
+
+@media(max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+/* Tablet */
+@media(max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    .clock {
+        width: 350px;
+        height: 350px;
+    }
+
+    .clock::before {
+        width: 5px;
+        height: 5px;
+    }
+
+    .circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .circle2 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .circle3 {
+        width: 140px;
+        height: 140px;
+    }
+
+    .circle::before {
+        top: -6.5px;
+        width: 10px;
+        height: 10px;
+    }
+
+
+    /* digital clock */
+    #time div {
+        width: 40px;
+
+    }
+
+    #time div:nth-child(1)::after,
+    #time div:nth-child(2)::after {
+        right: -3px;
+    }
+
+
+    /* Mobile phon */
+
+    @media(max-width: 450px) {
+        html {
+            font-size: 55%;
+        }
+    }

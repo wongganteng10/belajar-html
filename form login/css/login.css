@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* background-color: rgb(163, 137, 105); */
+  font-family: sans-serif, arial;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #23242a;
+}
+
+.container .pembungkus .box {
+  position: relative;
+  width: 380px;
+  height: 420px;
+  background: #1c1c1c;
+  overflow: hidden;
+}
+
+.container .pembungkus .box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+
+.container .pembungkus .box::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
+  /* z-index: 1; */
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+
+.container .pembungkus .box .borderline {
+  position: absolute;
+  top: 0;
+  inset: 0;
+}
+
+.container .pembungkus .box .borderline::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, transparent, #ff2770, #ff2770, #ff2770);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -1.5s;
+}
+
+.container .pembungkus .box .borderline::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, transparent, #ff2770, #ff2770, #ff2770);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -4.5s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container .pembungkus .box form {
+  position: absolute;
+  inset: 4px;
+  background: #222;
+  padding: 50px 40px;
+  border-radius: 8px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .pembungkus .box form h2 {
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.container .pembungkus .box form .inputBox {
+  position: relative;
+  width: 300px;
+  margin-top: 35px;
+}
+
+.container .pembungkus .box form .inputBox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #23242a;
+  /* color: #fff; */
+  font-size: 1em;
+  transition: 0.5s;
+  letter-spacing: 0.05em;
+  z-index: 10;
+}
+
+.container .pembungkus .box form .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 20px 0px 10px;
+  pointer-events: none;
+  color: #8f8f8f;
+  font-size: 1em;
+  transition: 0.5s;
+  letter-spacing: 0.05em;
+}
+
+.container .pembungkus .box form .inputBox input:valid~span,
+.container .pembungkus .box form .inputBox input:focus~span {
+  color: #fff;
+  font-size: 0.75em;
+  transform: translateY(-34px);
+}
+
+.container .pembungkus .box form .inputBox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.container .pembungkus .box form .inputBox input:valid~i,
+.container .pembungkus .box form .inputBox input:focus~i {
+  height: 44px;
+}
+
+.container .pembungkus .box form .links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .pembungkus .box form .links a {
+  margin: 10px 0;
+  font-size: 0.75em;
+  color: #8f8f8f;
+  text-decoration: none;
+}
+
+.container .pembungkus .box form .links a:hover,
+.container .pembungkus .box form .links a:nth-child(2) {
+  color: #fff;
+}
+
+.container .pembungkus .box form input[type="submit"] {
+  border: none;
+  outline: none;
+  padding: 9px 25px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 0.9em;
+  border-radius: 4px;
+  font-weight: 600;
+  width: 100px;
+  margin-top: 10px;
+}
+
+.container .pembungkus .box form input[type="submit"]:active {
+  opacity: 0.8;
+}
